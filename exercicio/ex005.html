@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ex 005</title>
+    <title>ex 005 - Primeiros passos com DOM</title>
+
+    <style>
+        body {
+            background-color: rgba(0, 255, 255, 0.527);
+            color: black(245, 245, 245);
+            font: normal 18px arial;
+        }
+    </style>
 </head>
 <body>
-
+    <h1 id="msg">Iniciando os estudos com DOM</h1>
+    <p class="pa">aqui vai o resultado</p>
+    <p class="pa">aprendendo a usar <strong>DOM</strong> em javascript</p>
+    <div name="di">clique em mim</div>
+    <script>
+        //let p1 = window.document.getElementsByTagName('p')[0]
+        //window.document.write(p1.innerText)
+        //p1.style.color = 'blue'
+        //p1 = document.getElementById("msg")
+        //p1.style.color = "green"
+        let p2 = window.document.getElementsByName('di')
+        p2[0].style.background = "blue"
+        let p3 = document.getElementsByClassName("pa")
+        p3[1].style.color = "red"
+        p4 = document.querySelector('h1#msg')
+        p4.style.color = "green"
     </script>
 </body>
 </html>
