@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 12</title>
+</head>
+<body>
+    <h1>Qual seu país</h1>
+    Digite seu país:<input type="text" name="txtco" id="txtco">
+    <input type="button" value="Enviar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            let txtc = document.getElementById('txtco');
+            let res = document.getElementById('res');
+            let pais = txtc.value.toUpperCase();
+
+            res.innerHTML = `Seu país é ${pais}`
+            if (pais == 'BRAZIL') {
+                res.innerHTML = 'você é brasileiro'
+            }
+            else {
+                res.innerHTML = 'você é estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>
