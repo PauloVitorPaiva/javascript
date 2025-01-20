@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+    background-color: lightseagreen;
+    font: normal 15px Arial;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.295);
+}
+
+div {
+    text-align: center;
+}
+
+footer {
+    font-style: italic;
+}
+
+.branco {
+    color: white;
+    text-align: center;
+}
