@@ -5,18 +5,32 @@ let conjn = []
 
 function valores() {
     let num = Number(n.value)
-    conjn.push(num)
-    let c = 0
     if (num >= 1 && num <= 100) {
         val.value += `Valor ${num} Adicionado \n`
+        return num;
     }
     else {
-        alert(`O valor ${num} é invalido digite outro valor`)
-        return
+        alert(`Este número é invalido digite outro`)
+        return null
     }
 }
 
-function removerdup(conjn) {
-    return [...new Set(conjn)]
+function jexiste(num) {
+    if (conjn.includes(num)) {
+       alert(`O número ${num} já esta na lista`) 
+       return false
+    }
+    else {
+        return true
+    }
 }
-resf.innerHTML = 
+
+function adilista() {
+    let num = valores()
+
+    if (num && jexiste(num)) {
+        conjn.push(num)  
+        resf.innerHTML += `O número ${num} foi adicionado a lista`;
+    }
+}
+
