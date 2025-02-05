@@ -1,23 +1,21 @@
-let n = document.querySelector("#txtnum")
-const val = document.querySelector("#val")
-const resf = document.querySelector("#res")
+let num = document.querySelector("#txtnum")
+let val = document.querySelector("#val")
+let resf = document.querySelector("#res")
 let conjn = []
 
-function valores() {
-    let num = Number(n.value)
-    if (num >= 1 && num <= 100) {
-        val.value += `Valor ${num} Adicionado \n`
-        return num;
+function valores(n) {
+    if (n >= 1 && n <= 100) {
+        return true;
     }
     else {
         alert(`Este número é invalido digite outro`)
-        return null
+        return false;
     }
 }
 
-function jexiste(num) {
-    if (conjn.includes(num)) {
-       alert(`O número ${num} já esta na lista`) 
+function jexiste(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+       alert(`O número ${n} já esta na lista`) 
        return false
     }
     else {
@@ -26,11 +24,15 @@ function jexiste(num) {
 }
 
 function adilista() {
-    let num = valores()
-
-    if (num && jexiste(num)) {
-        conjn.push(num)  
-        resf.innerHTML += `O número ${num} foi adicionado a lista`;
+    if (valores(Number(num.value)) && jexiste(Number(num.value), conjn)) {
+        let item = document.createElement('option')
+        item.text = `O Valor ${num.value} Adicionado`
+        val.appendChild(item)
+        conjn.push(Number(num.value))
     }
 }
 
+function gerari() {
+    let tot = conjn.length
+    resf.innerHTML = tot
+}
