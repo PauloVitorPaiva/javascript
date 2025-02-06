@@ -30,9 +30,30 @@ function adilista() {
         val.appendChild(item)
         conjn.push(Number(num.value))
     }
+    num.value = ''
+    num.focus()
 }
 
 function gerari() {
     let tot = conjn.length
-    resf.innerHTML = tot
+    let maior = conjn[0]
+    let menor = conjn[0]
+    let soma = 0
+    for (let v = 0; v < conjn.length; v++) {
+        if (conjn[v] > maior) {
+            maior = conjn[v]
+        }
+        else if (conjn[v] < menor) {
+            menor = conjn[v]
+        }
+    soma += conjn[v]
+    }
+    resf.innerHTML += `<p>Ao todo temos ${tot} números</p>`
+    resf.innerHTML += `<p>O maior valor é ${maior} e o menor valor è ${menor}</p>`
+    resf.innerHTML += `<p>A soma de todos os valores é ${soma} e a média da soma é ${soma / tot}</p>`
+}
+
+function limpar() {
+    val.innerHTML = ''
+    resf.innerHTML = ''
 }
